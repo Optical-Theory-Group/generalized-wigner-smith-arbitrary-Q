@@ -141,7 +141,7 @@ def get_n_silica(k: complex) -> complex:
 
 
 def get_n_water() -> complex:
-    data = np.genfromtxt("/home/nbyrnes/code/resonance/water_hale.txt")
+    data = np.genfromtxt("water_hale.txt")
     real = data[1:170, :]
     imag = data[171:, :]
     real[:, 0] *= 1e-6
@@ -158,7 +158,7 @@ def get_n_water() -> complex:
 
 
 def get_n_water_interpolate() -> complex:
-    data = np.genfromtxt("/home/nbyrnes/code/resonance/water_hale.txt")
+    data = np.genfromtxt("water_hale.txt")
     real = data[1:170, :][:21]
     imag = data[171:, :][:21]
     comp = np.column_stack((real[:, 0] * 1e-6, real[:, 1] + 1j * imag[:, 1]))
